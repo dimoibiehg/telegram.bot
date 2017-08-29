@@ -115,7 +115,7 @@ namespace Telegram.Bot
         /// The negative offset can be specified to retrieve updates starting from -offset update from the end of the updates queue. All previous updates will forgotten.
         /// </param>
         /// <param name="limit">
-        /// Limits the number of updates to be retrieved. Values between 1ó100 are accepted.
+        /// Limits the number of updates to be retrieved. Values between 1‚Äî100 are accepted.
         /// </param>
         /// <param name="timeout">
         /// Timeout in seconds for long polling. Defaults to 0, i.e. usual short polling. Should be positive, short polling should be used for testing purposes only.
@@ -154,7 +154,7 @@ namespace Telegram.Bot
         /// Upload your public key certificate so that the root certificate in use can be checked.
         /// See the <see href="https://core.telegram.org/bots/self-signed">self-signed guide</see> for details.
         /// </param>
-        /// <param name="maxConnections">Maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery, 1-100. Defaults to 40. Use lower values to limit the load on your botës server, and higher values to increase your botís throughput.</param>
+        /// <param name="maxConnections">Maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery, 1-100. Defaults to 40. Use lower values to limit the load on your bot‚Äòs server, and higher values to increase your bot‚Äôs throughput.</param>
         /// <param name="allowedUpdates">
         /// List the <see cref="UpdateType"/> of updates you want your bot to receive. See <see cref="UpdateType"/> for a complete list of available update types. Specify an empty list to receive all updates regardless of type (default).
         /// If not specified, the previous setting will be used.
@@ -271,7 +271,7 @@ namespace Telegram.Bot
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>On success, the sent Message is returned.</returns>
         /// <see href="https://core.telegram.org/bots/api#sendaudio"/>
-        Task<Message> SendAudioAsync(ChatId chatId, FileToSend audio, string caption, int duration, string performer, string title,
+        Task<Message> SendAudioAsync(ChatId chatId, FileToSend audio, string caption = "", int duration = 0, string performer = "", string title = "",
             bool disableNotification = false,
             int replyToMessageId = 0,
             IReplyMarkup replyMarkup = null,
@@ -453,7 +453,7 @@ namespace Telegram.Bot
         /// </summary>
         /// <param name="userId">Unique identifier of the target user</param>
         /// <param name="offset">Sequential number of the first photo to be returned. By default, all photos are returned.</param>
-        /// <param name="limit">Limits the number of photos to be retrieved. Values between 1ó100 are accepted. Defaults to 100.</param>
+        /// <param name="limit">Limits the number of photos to be retrieved. Values between 1‚Äî100 are accepted. Defaults to 100.</param>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Returns a <see cref="UserProfilePhotos"/> object</returns>
         /// <see href="https://core.telegram.org/bots/api#getuserprofilephotos"/>
@@ -550,7 +550,7 @@ namespace Telegram.Bot
         /// <param name="text">Text of the notification. If not specified, nothing will be shown to the user</param>
         /// <param name="showAlert">If true, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to false.</param>
         /// <param name="url">
-        /// URL that will be opened by the user's client. If you have created a Game and accepted the conditions via @Botfather, specify the URL that opens your game ñ note that this will only work if the query comes from a callback_game button.
+        /// URL that will be opened by the user's client. If you have created a Game and accepted the conditions via @Botfather, specify the URL that opens your game ‚Äì note that this will only work if the query comes from a callback_game button.
         /// Otherwise, you may use links like telegram.me/your_bot? start = XXXX that open your bot with a parameter.
         /// </param>
         /// <param name="cacheTime">The maximum amount of time in seconds that the result of the callback query may be cached client-side. Telegram apps will support caching starting in version 3.14.</param>
@@ -926,7 +926,7 @@ namespace Telegram.Bot
         /// Use this method to create new sticker set owned by a user. The bot will be able to edit the created sticker set. 
         /// </summary>
         /// <param name="userId">User identifier of created sticker set owner</param>
-        /// <param name="name">Short name of sticker set, to be used in t.me/addstickers/ URLs (e.g., animals). Can contain only english letters, digits and underscores. Must begin with a letter, can't contain consecutive underscores and must end in ì_by_&lt;bot_username&gt;î. &lt;bot_username&gt; is case insensitive. 1-64 characters.</param>
+        /// <param name="name">Short name of sticker set, to be used in t.me/addstickers/ URLs (e.g., animals). Can contain only english letters, digits and underscores. Must begin with a letter, can't contain consecutive underscores and must end in ‚Äú_by_&lt;bot_username&gt;‚Äù. &lt;bot_username&gt; is case insensitive. 1-64 characters.</param>
         /// <param name="title">Sticker set title, 1-64 characters</param>
         /// <param name="pngSticker">Png image with the sticker, must be up to 512 kilobytes in size, dimensions must not exceed 512px, and either width or height must be exactly 512px.</param>
         /// <param name="emojis">One or more emoji corresponding to the sticker</param>
